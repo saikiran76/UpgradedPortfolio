@@ -7,7 +7,7 @@ import StarIcon from '@/assets/icons/star.svg'
 
 export const HeroSection = () => {
   return (
-    <section className="py-32 md:py-48 lg:py-60 relative z-0">
+    <section className="py-32 md:py-48 lg:py-60 relative z-0 sm:overflow-x-hidden">
       <div 
         className="absolute inset-0 -z-30 opacity-5"
         style={{
@@ -19,7 +19,7 @@ export const HeroSection = () => {
       <div className="size-[820px] ring"></div>
       <div className="size-[1020px] ring"></div>
       <div className="absolute left-[22%] top-[0.4rem] -translate-x-1/2 -translate-y-1/2">
-        <div className="absolute size-[750px] animate-spin [animation-duration:30s]">
+        <div className="absolute size-[750px] animate-spin [animation-duration:30s] overflow-x-hidden">
             <div className="inline-flex animate-spin [animation-duration:5s]">
             <StarIcon className="size-28 text-emerald-300"/>
         </div>
