@@ -3,6 +3,7 @@ import Image from "next/image";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
+import StarIcon from '@/assets/icons/star.svg'
 
 export const HeroSection = () => {
   return (
@@ -17,8 +18,15 @@ export const HeroSection = () => {
       <div className="size-[620px] ring"></div>
       <div className="size-[820px] ring"></div>
       <div className="size-[1020px] ring"></div>
+      <div className="absolute left-[22%] top-[0.4rem] -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute size-[750px] animate-spin [animation-duration:30s]">
+            <div className="inline-flex animate-spin [animation-duration:5s]">
+            <StarIcon className="size-28 text-emerald-300"/>
+        </div>
+        </div>
+      </div>
       <div className="container">
-        <div className="flex flex-col items-center z-1">
+        <div className="flex flex-col items-center z-1 overflow-x-clip">
           <Image src={memojiImage} alt="Memoji" className="size-[100px]" />
           <div>
             <div className="bg-black/90 text-white/80 px-4 py-2 border border-white/15 rounded-md text-sm font-medium flex items-center justify-center gap-5">
