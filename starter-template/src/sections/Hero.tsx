@@ -18,7 +18,7 @@ export const HeroSection = () => {
       <div className="size-[820px] ring"></div>
       <div className="size-[1020px] ring"></div>
       <div className="container">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center z-1">
           <Image src={memojiImage} alt="Memoji" className="size-[100px]" />
           <div>
             <div className="bg-black/90 text-white/80 px-4 py-2 border border-white/15 rounded-md text-sm font-medium flex items-center justify-center gap-5">
