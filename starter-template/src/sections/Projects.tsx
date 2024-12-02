@@ -91,7 +91,7 @@ export const ProjectsSection = () => {
               <div className="flex flex-col gap-4 justify-center mt-4">
                 <a href={project.link}>
                 
-              <button className="bg-white text-black px-4 py-2 rounded-xl w-[88%] md:w-[96.5%]font-bold inline-flex items-center justify-center gap-2 cursor-pointer hover:bg-gradient-to-r hover:from-bg-neutral-100 hover:to-bg-neutral-200 transition duration-300 absolute z-20">Visit Live Site
+              <button className="bg-white text-black px-4 py-2 rounded-xl w-[88%] md:w-[96.5%] font-bold inline-flex items-center justify-center gap-2 cursor-pointer hover:bg-gradient-to-r hover:from-bg-neutral-100 hover:to-bg-neutral-200 transition duration-300 absolute z-20">Visit Live Site
                 <ArrowUpRightIcon className="size-4"/>
 
                 
