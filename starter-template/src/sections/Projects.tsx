@@ -83,8 +83,8 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-  <section>
-    <div className="container">
+  <section id="projects">
+    <div className="container mt-20">
       {/* <div className="flex flex-col gap-10 justify-center items-center"> */}
         {/* <div className="flex flex-col justify-center items-center"> */}
           <div className="flex justify-center">
@@ -145,7 +145,7 @@ export const ProjectsSection = () => {
             </div>
             
           ))}
-          <div className="max-w-[30rem] mx-auto absolute top-[40rem]">
+          <div className="max-w-[30rem] mx-auto absolute top-[40rem] md:hidden">
             <p className="text-white/50 text-sm text-center">
               And many more will be added progressively...🚀 stay tuned!
             </p>

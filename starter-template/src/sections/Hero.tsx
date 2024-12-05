@@ -1,4 +1,8 @@
+'use client'
+
 import Image from "next/image";
+import { useState } from 'react';
+import { ConnectCard } from '@/components/ConnectCard';
 
 import memojiImage from "@/assets/images/memoji-computer.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
@@ -7,6 +11,8 @@ import StarIcon from '@/assets/icons/star.svg'
 import { HeroOrbit } from "@/components/HeroOribit";
 
 export const HeroSection = () => {
+  const [isConnectOpen, setIsConnectOpen] = useState(false);
+
   return (
     <section className="py-32 md:py-48 lg:py-60 relative z-5 max-w-screen overflow-x-clip">
         <div 
@@ -73,16 +79,30 @@ export const HeroSection = () => {
           <p className="text-center text-white/55 mt-4 max-w-2xl md:max-w-md mx-auto">
             I specialize in crafting designs into seamless experiences that has high performance. Let&apos;s discuss 👋
           </p>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-3 mt-4">
-            <button className="bg-transparent backdrop-blur border border-gray-500/60 text-white/95 px-6 py-4 mt-3 rounded-xl text-lg/3 font-medium inline-flex items-center justify-center gap-2">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 mt-4 absolute z-40 translate-x-[30%] md:translate-x-[92%] mb-24">
+            <button className="bg-transparent backdrop-blur border border-gray-500/60 text-white/95 px-6 py-4 mt-3 rounded-xl text-lg/3 font-medium inline-flex items-center justify-center gap-2"
+            onClick={() => {
+              document.getElementById('projects')?.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }}>
               <span>Explore my work</span>
               <ArrowDown className="size-4" />
             </button>
 
-            <button className="bg-white border border-gray-500/60 text-gray-900 px-4 py-3 mt-3 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2">
+            <button 
+              onClick={() => setIsConnectOpen(true)}
+              className="bg-white border border-gray-500/60 text-gray-900 px-4 py-3 mt-3 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2"
+            >
               <span>👋 Let&apos;s Connect</span>
             </button>
           </div>
+
+          <ConnectCard 
+            isOpen={isConnectOpen}
+            onClose={() => setIsConnectOpen(false)}
+          />
       </div>
     </section>
   );
