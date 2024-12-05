@@ -37,21 +37,21 @@ export const HeroSection = () => {
           <StarIcon className="lg:size-32 sm:size-18 text-emerald-300"/>
         </HeroOrbit>
 
-        {/* <HeroOrbit deg={-115} className="md:size-[500px] size-[250px] lg:size-[750px]">
+        <HeroOrbit deg={-115} className="md:size-[500px] size-[250px] lg:size-[750px]">
           <StarIcon className="size-28 text-emerald-300 sm:size-14"/>
-        </HeroOrbit> */}
+        </HeroOrbit>
 
-        {/* <HeroOrbit deg={180} className="md:size-[300px] size-[150px] lg:size-[450px]">
+        <HeroOrbit deg={180} className="md:size-[300px] size-[150px] lg:size-[450px]">
           <StarIcon className="size-[6rem] text-emerald-300 sm:size-14"/>
         </HeroOrbit>
 
         <HeroOrbit deg={98} className="md:size-[200px] size-[100px] lg:size-[350px]">
           <StarIcon className="size-[4rem] text-emerald-300 sm:size-14"/>
-        </HeroOrbit> */}
+        </HeroOrbit>
 
-        {/* <HeroOrbit deg={188} className="md:size-[150px] size-[70px] lg:size-[250px]">
+        <HeroOrbit deg={188} className="md:size-[150px] size-[70px] lg:size-[250px]">
           <StarIcon className="size-[3rem] text-emerald-300 sm:size-14"/>
-        </HeroOrbit> */}
+        </HeroOrbit>
 
       
         
@@ -60,7 +60,9 @@ export const HeroSection = () => {
             <Image src={memojiImage} alt="Memoji" className="size-[100px]" />
             <div>
               <div className="bg-black/90 text-white/80 px-4 py-2 border border-white/15 rounded-md text-sm font-medium flex items-center justify-center gap-5">
-                <div className="bg-green-500/90 rounded-full size-2.5"></div>
+                <div className="bg-green-500/90 rounded-full size-2.5 relative">
+                  <div className="absolute inset-0 animate-ping rounded-full bg-green-500 opacity-75"></div>
+                </div>
                 <div>Available for new projects</div>
               </div>
             </div>

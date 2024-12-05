@@ -1,14 +1,27 @@
 import darkSaasLandingPage from "@/assets/images/P1.png";
 import lightSaasLandingPage from "@/assets/images/BS.png";
-import aiStartupLandingPage from "@/assets/images/P3.png";
+import aiStartupLandingPage from "@/assets/images/collab.png";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg'
+import alertImage from "@/assets/images/alert.png"
 import { Github } from 'lucide-react'; 
 import grainImage from '@/assets/images/grain.jpg'
 import Image from "next/image";
 import Link from "next/link";
 
 const portfolioProjects = [
+  {
+    "company": "Hava Havai (Product Startup)",
+    "year": "2024",
+    "title": "SDE Intern Project",
+    "results": [
+        { "title": "Developed a core notification feature using Node.js to enhance user engagement with real-time updates enhancing the user experiences." },
+        { "title": "Collaborated with stakeholders to gather, document, and analyze requirements, ensuring alignment with project goals." }
+    ],
+    "link": "",
+    "github": "",
+    "image": alertImage
+  },
   {
     company: "Personal Project #1",
     year: "2024",
@@ -31,23 +44,41 @@ const portfolioProjects = [
       { title: "Generate some interesting questions" },
       { title: "Based on the content of your canvas" },
       { title: "Note: Added this feature to the existing Excalidraw Open Source project personally (in a private repo) since I am a big fan of this project :)" },
-      { title: "My own digital canvas application will be coming soon...🚀" },
+      { title: "My own digital canvas application is right below and going to have new features added soon..🚀" },
     ],
     link: "https://edbs-six.vercel.app/",
     image: lightSaasLandingPage,
   },
-  // {
-  //   company: "Quantum Dynamics",
-  //   year: "2023",
-  //   title: "AI Startup Landing Page",
-  //   results: [
-  //     { title: "Enhanced user experience by 40%" },
-  //     { title: "Improved site speed by 50%" },
-  //     { title: "Increased mobile traffic by 35%" },
-  //   ],
-  //   link: "https://youtu.be/Z7I5uSRHMHg",
-  //   image: aiStartupLandingPage,
-  // },
+  {
+    "company": "Collabboard 2.0",
+    "year": "2024",
+    "title": "Real-time Collaborative Drawing Platform",
+    "results": [
+        { "title": "Developed a real-time collaborative drawing tool supporting multiple users with live mouse tracking." },
+        { "title": "Implemented room management with unique room IDs, persistent state, and 12-user limit." },
+        { "title": "Built a Node.js backend for room-based WebSocket communication, ensuring low-latency updates." }
+    ],
+    "link": "https://collabboard-2-0.vercel.app/",
+    "github": "https://github.com/saikiran76/Collabboard-2.0",
+    "image": aiStartupLandingPage
+},
+
+{
+  "company": "Many more to come..",
+  "year": "",
+  "title": "",
+  "results": [
+      { "title": "" },
+      { "title": "" },
+      { "title": "" }
+  ],
+  "link": "",
+  "github": "",
+  "image": ""
+},
+
+
+
 ];
 
 export const ProjectsSection = () => {
@@ -64,9 +95,13 @@ export const ProjectsSection = () => {
            See how I transformed concepts into engaging experiences.
          </p>
         {/* </div> */}
-        <div className="mt-6 flex flex-col gap-16">
-          {portfolioProjects.map((project)=>(
-            <div className="px-5 py-8 rounded-3xl bg-gray-800 relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl backdrop-blur border border-white/30 after:outline-white/20 p-8" key={project.link}>
+        <div className="mt-6 flex flex-col gap-16 mb-5">
+          {portfolioProjects.map((project, projectIndex)=>(
+            <div className="px-5 py-8 rounded-3xl bg-gray-800 z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl backdrop-blur border border-white/30 after:outline-white/20 p-8 sticky top-16" key={project.link}
+            style={{
+              top: `calc(64px  + ${projectIndex * 30}px)`
+              
+            }}>
               <div className="absolute inset-0 -z-10 opacity-5">
                 <Image src={grainImage} alt="grain" className="w-full h-full object-cover"/>
               </div>
@@ -88,7 +123,7 @@ export const ProjectsSection = () => {
               ))}
               </ul>
               {/* <div className="absolute z-20"> */}
-              <div className="flex flex-col gap-4 justify-center mt-4">
+              {project.title === "SDE Intern Project" || project.company === "Many more to come.." ? <div></div> : (<div className="flex flex-col gap-4 justify-center mt-4">
                 <a href={project.link}>
                 
               <button className="bg-white text-black px-4 py-2 rounded-xl w-[88%] md:w-[96.5%] font-bold inline-flex items-center justify-center gap-2 cursor-pointer hover:bg-gradient-to-r hover:from-bg-neutral-100 hover:to-bg-neutral-200 transition duration-300 absolute z-20">Visit Live Site
@@ -101,7 +136,7 @@ export const ProjectsSection = () => {
               <button className="bg-white text-black px-4 py-2 rounded-xl w-full font-bold inline-flex items-center justify-center gap-2 cursor-pointer mt-8">Visit Github Repo
                 <Github className="size-4"/>
               </button>
-              </div>
+              </div>)}
               {/* </div> */}
               
               <div>
@@ -110,7 +145,7 @@ export const ProjectsSection = () => {
             </div>
             
           ))}
-          <div className="max-w-xl mx-auto mb-16">
+          <div className="max-w-[30rem] mx-auto absolute top-[40rem]">
             <p className="text-white/50 text-sm text-center">
               And many more will be added progressively...🚀 stay tuned!
             </p>
